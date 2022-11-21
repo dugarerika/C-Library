@@ -6,13 +6,18 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:39:54 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/10 07:54:56 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:37:49 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+
+/* The memmove() function copies len bytes from string src to string dst.
+     The two strings may overlap; the copy is always done in a non-destructive
+     manner.
+*/
 
 void	*ft_memmove(void *dest, void *src, unsigned int n )
 {

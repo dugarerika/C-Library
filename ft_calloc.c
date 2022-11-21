@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:51:11 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/21 11:43:35 by etavera-         ###   ########.fr       */
+/*   Created: 2022/11/21 12:01:34 by etavera-          #+#    #+#             */
+/*   Updated: 2022/11/21 12:06:10 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <xlocale.h>
+#include <stdlib.h>
 
-/*The bzero() function writes n zeroed bytes to the string s.  If n is
-     zero, bzero() does nothing.
+/*
+
 */
-
-int	ft_atoi(char *str)
+void	*ft_calloc()
 {
-	return (0);
+
 }
 
 int	main(void)
 {
+	
 }

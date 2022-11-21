@@ -6,13 +6,19 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:50:10 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/09 10:45:28 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:49:10 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <ctype.h>
+
+/*
+The isprint() function tests for any printing character, including space
+(` ').  The value of the argument must be representable as an unsigned
+char or the value of EOF.
+*/
 
 int	ft_isprint(int c)
 {

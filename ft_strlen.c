@@ -6,13 +6,19 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:15:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/14 09:56:44 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:59:48 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+
+/*
+     The strlen() function computes the length of the string s.  The strnlen()
+     function attempts to compute the length of s, but never scans beyond the
+     first maxlen bytes of s.
+*/
 
 int	ft_strlen(const char *str)
 {
