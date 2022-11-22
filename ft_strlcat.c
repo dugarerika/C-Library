@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/21 11:51:03 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:43:34 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,39 +36,43 @@
      If the src and dst strings overlap, the behavior is undefined.
 */
 
-int	ft_strlcat(char *dest, char *src, int n)
-{
-	int	i;
-	int	j;
+// int	ft_strlcat(char *dest, char *src, int n)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	j = 0;
-	while (dest[j] != '\0')
-	{
-				// printf("%d", j);
-		j++;
-	}
-	while (src[i] != '\0' && i < n)
-	{
-		// printf("%d", j + i);
-		// dest[j + i] = src[i];
-		i++;
+// 	i = 0;
+// 	j = 0;
+// 	while (dest[j] != '\0')
+// 	{
+// 				// printf("%d", j);
+// 		j++;
+// 	}
+// 	while (src[i] != '\0' && i < n)
+// 	{
+// 		// printf("%d", j + i);
+// 		// dest[j + i] = src[i];
+// 		i++;
 
-	}
-	return (j + 1);
-}
+// 	}
+// 	return (j + 1);
+// }
 
 int	main(void)
 {
-	char	dest[50];
-	char 	src[50];
-	strcpy(dest, "123456789");
-	strcpy(src, "fuen");
-	printf("result %lu", strlen(dest));
-	printf("result %lu", strlen(src));
-	printf("%s", "-");
-	printf("%lu", strlcat(dest, src, 10));
-	// printf("%s", "-");
-	printf("%d", ft_strlcat(dest, src, 10));
-	// puts(dest);
+	char	primero[] = "Este es";
+	char	ultimo[] = "un potencial larga cadena";
+	int	r;
+	int	tamano = 15;
+	char	buffer[tamano];
+
+	strcpy(buffer, primero);
+	r = strlcat(buffer,ultimo,tamano);
+	puts(buffer);
+	printf("Value returned: %d\n", r);
+	if (r > tamano)
+		puts("String truncated");
+	else
+		puts("String was fully copied");
+	return (0);
 }
