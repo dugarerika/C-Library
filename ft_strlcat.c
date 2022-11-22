@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/22 15:43:34 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:00:10 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,40 +36,56 @@
      If the src and dst strings overlap, the behavior is undefined.
 */
 
-// int	ft_strlcat(char *dest, char *src, int n)
-// {
-// 	int	i;
-// 	int	j;
+unsigned int	ft_length(char *s)
+{
+	unsigned int	k;
 
-// 	i = 0;
-// 	j = 0;
-// 	while (dest[j] != '\0')
-// 	{
-// 				// printf("%d", j);
-// 		j++;
-// 	}
-// 	while (src[i] != '\0' && i < n)
-// 	{
-// 		// printf("%d", j + i);
-// 		// dest[j + i] = src[i];
-// 		i++;
+	k = 0 ;
+	while (s[k] != '\0')
+	{
+		k++;
+	}
+	return (k);
+}
 
-// 	}
-// 	return (j + 1);
-// }
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	l;
+
+	i = 0;
+	l = ft_length(dest);
+	while (src[i] != '\0' && i < size)
+	{
+		dest[l + i] = src[i];
+		i++;
+	}
+	dest[l + i] = '\0';
+	return (l + i +1);
+}
 
 int	main(void)
 {
 	char	primero[] = "Este es";
 	char	ultimo[] = "un potencial larga cadena";
 	int	r;
+	int s;
 	int	tamano = 15;
-	char	buffer[tamano];
-
-	strcpy(buffer, primero);
-	r = strlcat(buffer,ultimo,tamano);
-	puts(buffer);
+	char	buffer1[tamano];
+	char	buffer2[tamano];
+	strcpy(buffer1, primero);
+	strcpy(buffer2, primero);
+	r = strlcat(buffer1,ultimo,tamano);
+	s = ft_strlcat(buffer2,ultimo,tamano);
+	puts(buffer1);
+	puts(buffer2);
 	printf("Value returned: %d\n", r);
+	if (s > tamano)
+		puts("String truncated");
+	else
+		puts("String was fully copied");
+
+		printf("Value returned: %d\n", r);
 	if (r > tamano)
 		puts("String truncated");
 	else
