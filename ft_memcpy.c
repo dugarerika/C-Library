@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:13 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 11:56:27 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:40:47 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <unistd.h>
 #include <string.h>
 
-void	*ft_memcpy(void *dest, void *src, unsigned int
- n)
+void	*ft_memcpy(void *dest, void *src, unsigned int n)
 {
 	unsigned int	i;
 	unsigned char	*pdest;

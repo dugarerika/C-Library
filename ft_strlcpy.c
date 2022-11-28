@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:42:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 14:13:04 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:02:34 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@
      If the src and dst strings overlap, the behavior is undefined.
 */
 
-unsigned int	ft_lenght (char c)
+unsigned int	ft_length(char *s)
 {
 	unsigned int	k;
 
-	k = 0;
-	while (s[k] != '/0')
+	k = 0 ;
+	while (s[k] != '\0')
 		k++;
 	return (k);
 }
