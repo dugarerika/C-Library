@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:42:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/21 11:58:09 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:13:04 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,26 @@
      If the src and dst strings overlap, the behavior is undefined.
 */
 
-int	ft_strlcpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_lenght (char c)
 {
-	unsigned int	i;
-	unsigned int	j;
+	unsigned int	k;
+
+	k = 0;
+	while (s[k] != '/0')
+		k++;
+	return (k);
+}
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
 	while (src[i] != '\0')
 	{
-		if (n != 0 && (i < (n - 1)))
+		if (size != 0 && (i < (size - 1)))
 		{
 			dest[i] = src[i];
 			j++;
@@ -58,8 +68,10 @@ int	ft_strlcpy(char *dest, char *src, unsigned int n)
 
 // int	main(void)
 // {
-// 	char	dest[50];
-// 	char 	src[50];
+// 	char	primero[] = "primero";
+// 	char 	ultimo[] = "ultimo";
+// 	int r;
+// 	int s;
 // 	strcpy(dest, "destino this is the destination");
 // 	strcpy(src, "fuente this is the source");
 // 	printf("%lu",(strlcpy(dest, src, 3)));

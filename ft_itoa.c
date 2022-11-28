@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:51:11 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/21 11:43:35 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:50:44 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
      zero, bzero() does nothing.
 */
 
-int	ft_atoi(char *str)
+int	ft_itoa(char *str)
 {
 	return (0);
 }

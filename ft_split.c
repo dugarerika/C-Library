@@ -6,7 +6,16 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:50:45 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/07 17:50:46 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/24 06:54:17 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	**ft_split(const char *s, char c)
+{
+	return (0);
+}
+
+int	main(void)
+{
+	return (0);
+}

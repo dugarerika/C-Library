@@ -6,17 +6,17 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 06:27:06 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/14 06:27:08 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:47:17 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-// int	ft_strncmp(char *s1, char *s2, unsigned int n)
-// {
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
 
-// }
+}
 
 int	main(void)
 {
