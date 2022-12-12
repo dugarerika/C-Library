@@ -16,25 +16,25 @@
 
 int	ft_atoi(char *str)
 {
-	int	neg;
-	int	result;
-	int	k;
+int	neg;
+int	result;
+int	k;
 
-	k = 0;
-	neg = 1;
-	result = 0;
-	while (str[k] == 32 || (str[k] >= 9 && str[k] == 13))
-	{
-		k++;
-	}
-	while (str[k] == 45 || str[k] == 43)
-	{
-		if (str[k] == 45)
-		{
-			neg = neg * -1;
-		}
+k = 0;
+neg = 1;
+result = 0;
+while (str[k] == 32 || (str[k] >= 9 && str[k] == 13))
+{
 	k++;
+}
+while (str[k] == 45 || str[k] == 43)
+{
+	if (str[k] == 45)
+	{
+		neg = neg * -1;
 	}
+	k++;
+}
 	while (str[k] <= 57 && str[k] >= 48)
 	{
 		result = (result * 10) + (str[k] - 48);
@@ -47,6 +47,6 @@ int	ft_atoi(char *str)
 // {
 // 	char str[] = " -+++++-01234ab567";
 // 	printf("%d",ft_atoi(str));
-// /* 	printf("%s", "\n");
-// 	printf("%d", atoi(str)); */
+// 	printf("%s", "\n");
+// 	printf("%d", atoi(str)); 
 // }
