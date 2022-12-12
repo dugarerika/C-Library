@@ -6,38 +6,55 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:13 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 16:40:47 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:59:24 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <libft.h>
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
-	unsigned int	i;
-	unsigned char	*pdest;
-	unsigned char	*psrc;
+	char	*pdest;
+	char	*psrc;
 
-	pdest = dest;
-	psrc = src;
-	i = 0;
-	while (i < n)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	pdest = (char *) dest;
+	psrc = (char *) src;
+	while (n)
 	{
-		pdest[i] = pdest[i];
-		i++;
+		*pdest++ = *psrc++;
+		n--;
 	}
 	return (dest);
 }
 
 // int	main(void)
 // {
-// 	char	str[50];
-// 	char	src[50];
+// 	char	src[] = "copia esto";
+// 	char	dest[100];
 
-// 	strcpy(dest; "destino information informacion");
-// 	puts(dest);
-// 	strcpy(src, "fuente information informacion")
-// 	puts(src);
+// 	char *dest_print1 = memcpy(dest, src, strlen(src) + 1);
+// 	char *dest_print2 = ft_memcpy(dest, src, strlen(src) + 1);
+
+// 	// char *dest_print1 = memcpy(NULL, NULL, 3);
+// 	// char *dest_print2 = ft_memcpy(NULL, NULL, 3);
+
+// 	// char *dest_print1 = memcpy(NULL, NULL, 3);
+// 	// char *dest_print2 = ft_memcpy(NULL, NULL, 3);
+
+// 	printf("   src: %s\n", src);
+// 	printf("  dest: %s\n", dest);
+// 	printf("result1: %s\n", dest_print1);
+// 	printf("result2: %s\n", dest_print2);
+// 	printf("  dest: %p\n", dest);
+// 	printf("result1: %p\n", dest_print1);
+// 	printf("result2: %p\n", dest_print2);
+// 	// strcpy(dest; "destino information informacion");
+// 	// // puts(dest);
+// 	// strcpy(src, "fuente information informacion");
+// 	// // puts(src);
 // }

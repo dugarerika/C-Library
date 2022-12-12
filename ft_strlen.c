@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:15:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:20:14 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/12 08:01:45 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
      first maxlen bytes of s.
 */
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	r;
+	size_t	r;
 
 	r = 0;
 	while (str[r] != '\0')

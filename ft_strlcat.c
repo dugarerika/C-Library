@@ -6,13 +6,14 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:21:17 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:10:02 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <libft.h>
 
 /*
      The strlcpy() and strlcat() functions copy and concatenate strings with
