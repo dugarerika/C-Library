@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:13:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/09/29 17:26:18 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:16:50 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_atoi(char *str)
 	k = 0;
 	neg = 1;
 	result = 0;
-	while (str[k] == 32 || (str[k] >= 9 && str[k] == 13))
+	while (str[k] == 32 || (str[k] >= 9 && str[k] <= 13))
 	{
 		k++;
 	}
-	while (str[k] == 45 || str[k] == 43)
+	if (str[k] == 45 || str[k] == 43)
 	{
 		if (str[k] == 45)
 		{

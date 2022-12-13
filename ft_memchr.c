@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 05:57:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/13 10:53:11 by etavera-         ###   ########.fr       */
+/*   Created: 2022/12/13 08:03:13 by etavera-          #+#    #+#             */
+/*   Updated: 2022/12/13 17:33:46 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-char	*ft_strrchr(char *src, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-	int	pos;
 
-	i = 0;
-	while (src[i]!= '\0')
-	{
-		if (src[i] == c)
-			pos = i;
-		else
-			return (NULL);
-		i++;
-	}
-	return (src);
+
 }
 
+int main(void)
+{
+
+}

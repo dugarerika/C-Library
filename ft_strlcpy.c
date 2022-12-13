@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:42:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:02:34 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:14:53 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,21 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 		}
 		i++;
 	}
-	dest[j] = '\0';
+	if (size != 0)
+		dest[j] = '\0';
 	return (i);
 }
 
 // int	main(void)
 // {
-// 	char	primero[] = "primero";
-// 	char 	ultimo[] = "ultimo";
-// 	int r;
-// 	int s;
-// 	strcpy(dest, "destino this is the destination");
-// 	strcpy(src, "fuente this is the source");
-// 	printf("%lu",(strlcpy(dest, src, 3)));
-// 	printf("%d",(ft_strlcpy(dest, src, 3)));
+// 	// char	primero[] = "primero";
+// 	// char 	ultimo[] = "ultimo";
+// 	// int r;
+// 	// int s;
+// 	char dest[20], src[20], dest2[20];
+// 	strcpy(dest, "destino thi");
+// 	strcpy(dest2, "destino thi");
+// 	strcpy(src, "fuente thi");
+// 	printf("%zu %s\n",(strlcpy(dest, src, 0)), dest);
+// 	printf("%zu %s",(ft_strlcpy(dest2, src, 0)),dest2);
 // }

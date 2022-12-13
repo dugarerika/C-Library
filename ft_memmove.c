@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:39:54 by etavera-          #+#    #+#             */
-/*   Updated: 2022/11/28 17:20:01 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:26:29 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,26 @@
      manner.
 */
 
-void	*ft_memmove(void *dest, void *src, unsigned int n )
+void	*ft_memmove(void *dest, void *src, size_t n )
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*pd;
 	unsigned char	*ps;
 
-	pd = dest;
-	ps = src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	pd = (unsigned char *) dest;
+	ps = (unsigned char *) src;
 	i = 0;
+	if (src < dest)
+	{
+		while (n > 0)
+		{
+			pd[n - 1] = ps[n - 1];
+			n--;
+		}
+		return (dest);
+	}
 	while (i < n)
 	{
 		pd[i] = ps[i];
