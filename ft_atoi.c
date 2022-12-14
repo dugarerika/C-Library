@@ -28,7 +28,7 @@ int	k;
 =======
 k = 0;
 neg = 1;
-result = 0;
+result = 0;agit 
 while (str[k] == 32 || (str[k] >= 9 && str[k] == 13))
 {
 	k++;
