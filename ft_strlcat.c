@@ -6,14 +6,14 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/14 14:22:15 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:42:47 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#include <libft.h>
+
 
 /*
      The strlcpy() and strlcat() functions copy and concatenate strings with
@@ -44,59 +44,35 @@ unsigned int	ft_length1(char *s)
 	k = 0 ;
 	while (s[k] != '\0')
 		k++;
-	return (k);
+	return (k -1);
 }
 
 size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
-	size_t	i;
-	size_t	ldst;
-	size_t	lsrc;
+	char	*pdst;
+	int	n;
 
-	if (dst == NULL && src == NULL)
-		return (0);
-	i = 0;
-	ldst = ft_length1(dst);
-	lsrc = ft_length1(src);
-
-	while (*dst && size > 0 && size --)
+	n = size - ft_length1(dst);
+	pdst = (char *) dst + ft_length1(dst);
+	while (n)
 	{
-		dst ++;
-		i++;
+		*pdst++ = *src++;
+		n--;
 	}
-	while (*src && size > 1 && size --)
-	{
-		*dst++ = *src++;
-	}
-	if (size == 1)
-		*dst = '\0';
-	return (ldst + i);
+	if (n == 0)
+		pdst[size - ft_length1(dst)] = '\0';
+	return (size - ft_length1(dst));
 }
 
-// int	main(void)
-// {
-// 	char	primero[] = "Este es";
-// 	char	ultimo[] = "un potencial larga";
-// 	int	r;
-// 	int s;
-// 	int	tamano = 15;
-// 	char	buffer1[tamano];
-// 	char	buffer2[tamano];
-// 	strcpy(buffer1, primero);
-// 	strcpy(buffer2, primero);
-// 	r = strlcat(buffer1,ultimo,tamano);
-// 	s = ft_strlcat(buffer2,ultimo,tamano);
-// 	puts(buffer1);
-// 	puts(buffer2);
-// 	printf("Value returned: %d\n", r);
-// 	if (r > tamano)
-// 		puts("String truncated");
-// 	else
-// 		puts("String was fully copied");
-// printf("Value returned: %d\n", s);
-// 	if (s > tamano)
-// 		puts("String truncated");
-// 	else
-// 		puts("String was fully copied");
-// 	return (0);
-// }
+int	main(void)
+{
+	char	dst[] = "Este es";
+	char	src[] = "un potencial larga";
+	size_t	r;
+	size_t s;
+	int	tamano = 15;
+	r = strlcat(dst,src,tamano);
+	s = ft_strlcat(dst,src,tamano);
+	printf("Value returned: %zu\n", r);
+
+}

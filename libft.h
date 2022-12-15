@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 07:12:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/13 17:34:57 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:30:41 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_toupper(int str);
 int	ft_tolower(int str);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
-
-char	*ft_strchr(const char *str, int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
