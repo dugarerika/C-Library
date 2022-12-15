@@ -29,7 +29,6 @@ typedef struct	s_split_next
 	size_t length;
 }				t_split_next;
 
-int	ft_atoi(char *str);
 int	ft_isalpha(int c);
 int	ft_isalnum(int c);
 int	ft_isascii(int c);

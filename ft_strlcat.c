@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/12 13:10:02 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/14 14:22:15 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	size_t	ldst;
 	size_t	lsrc;
 
+	if (dst == NULL && src == NULL)
+		return (0);
 	i = 0;
 	ldst = ft_length1(dst);
 	lsrc = ft_length1(src);
