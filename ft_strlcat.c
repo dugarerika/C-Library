@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:12:05 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/15 18:42:47 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/21 06:17:29 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,65 +14,61 @@
 #include <unistd.h>
 #include <string.h>
 
-
-/*
-     The strlcpy() and strlcat() functions copy and concatenate strings with
-     the same input parameters and output result as snprintf(3).  They are
-     designed to be safer, more consistent, and less error prone replacements
-     for the easily misused functions strncpy(3) and strncat(3).
-
-     strlcpy() and strlcat() take the full size of the destination buffer and
-     guarantee NUL-termination if there is room.  Note that room for the NUL
-     should be included in dstsize.
-
-     strlcpy() copies up to dstsize - 1 characters from the string src to dst,
-     NUL-terminating the result if dstsize is not 0.
-
-     strlcat() appends string src to the end of dst.  It will append at most
-     dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
-     dstsize is 0 or the original dst string was longer than dstsize (in prac-
-     tice this should not happen as it means that either dstsize is incorrect
-     or that dst is not a proper string).
-
-     If the src and dst strings overlap, the behavior is undefined.
-*/
-
-unsigned int	ft_length1(char *s)
+size_t	ft_length1(char *s)
 {
-	unsigned int	k;
+	size_t	k;
 
 	k = 0 ;
 	while (s[k] != '\0')
 		k++;
-	return (k -1);
+	return (k);
 }
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*pdst;
-	int	n;
+	size_t	psize;
+	size_t	lsrc;
+	char	*psrc;
 
-	n = size - ft_length1(dst);
-	pdst = (char *) dst + ft_length1(dst);
-	while (n)
+	psrc = (char *)src;
+	lsrc = ft_length1(psrc);
+	psize = 0;
+	if (dstsize == 0)
+		return (ft_length1(psrc));
+	while (dstsize > 0 && *dst)
 	{
-		*pdst++ = *src++;
-		n--;
+		dst++;
+		dstsize--;
+		psize++;
 	}
-	if (n == 0)
-		pdst[size - ft_length1(dst)] = '\0';
-	return (size - ft_length1(dst));
+	while (dstsize > 1 && *psrc)
+	{
+		*dst++ = *psrc++;
+		dstsize--;
+	}
+	if (dstsize >= 1)
+		*dst = '\0';
+	if (dstsize == 0 && dst == 0)
+		return (lsrc);
+	return (psize + lsrc);
 }
 
-int	main(void)
-{
-	char	dst[] = "Este es";
-	char	src[] = "un potencial larga";
-	size_t	r;
-	size_t s;
-	int	tamano = 15;
-	r = strlcat(dst,src,tamano);
-	s = ft_strlcat(dst,src,tamano);
-	printf("Value returned: %zu\n", r);
+// int	main(void)
+// {
+// 	char	dst[15];
+// 	char	dst2[15];
+// 	memset(dst, 0, 15);
+// 	memset(dst2, 0, 15);
+// 	memset(dst, 'r', 6);
+// 	memset(dst2, 'r', 6);
+// 	dst[10] = 'a';
+// 	dst2[10] = 'a';
+// 	char	src[] = "lorem ipsum dolor sit amet";
+// 	size_t	r;
+// 	size_t s;
+// 	r = strlcat(dst,src,6);
+// 	s = ft_strlcat(dst2,src,6);
+// 	printf("Value returned orig : %zu\n%s\n", r,dst);
+// 	printf("Value returned mine: %zu\n%s\n", s, dst2);
 
-}
+// }

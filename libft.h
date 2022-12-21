@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 07:12:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/15 16:30:41 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/21 13:56:30 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-#include <libft.h>
+// #include <libft.h>
 
 typedef	struct	s_list
 {
@@ -38,16 +38,21 @@ int	ft_atoi(char *str);
 int	ft_itoa(char *str);
 int	ft_toupper(int str);
 int	ft_tolower(int str);
+int	ft_strncmp(char *s1, char *s2, size_t n);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(char *str, char *to_find, size_t len);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
 
+void	ft_putnbr_fd(int a, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
 void	ft_bzero(void *str, unsigned int n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *str, int a, unsigned int n);
