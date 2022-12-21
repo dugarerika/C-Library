@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 08:03:13 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/21 15:24:31 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/21 15:40:34 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,13 @@
 #include <string.h>
 #include "libft.h"
 
-size_t	ft_strlen1(const char *str)
-{
-	size_t	r;
-
-	r = 0;
-	while (str[r] != '\0')
-	{
-		r++;
-	}
-	return (r);
-}
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*ps;
 	char	*bs;
 	size_t		a;
 
-	a = ft_strlen1(s);
+	a = ft_strlen(s);
 	ps = ((char *) s) + a;
 	bs = ((char *) s) + a + 1;
 	while (a > n)

@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 07:12:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/21 13:56:30 by etavera-         ###   ########.fr       */
+/*   Updated: 2022/12/21 15:48:00 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size);
 
 void	ft_putnbr_fd(int a, int fd);
 void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_bzero(void *str, unsigned int n);
 void	*ft_memchr(const void *s, int c, size_t n);
