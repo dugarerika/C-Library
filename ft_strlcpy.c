@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:42:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/13 17:14:53 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:15:08 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,7 @@
      If the src and dst strings overlap, the behavior is undefined.
 */
 
-unsigned int	ft_length(char *s)
-{
-	unsigned int	k;
-
-	k = 0 ;
-	while (s[k] != '\0')
-		k++;
-	return (k);
-}
-
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
@@ -57,7 +47,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	{
 		if (size != 0 && (i < (size - 1)))
 		{
-			dest[i] = src[i];
+			dest[i] = (char)src[i];
 			j++;
 		}
 		i++;

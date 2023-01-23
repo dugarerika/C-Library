@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 07:12:52 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/21 15:48:00 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/23 10:04:35 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ void	ft_bzero(void *str, unsigned int n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *str, int a, unsigned int n);
 void	*ft_memmove(void *dest, void *src, size_t n );
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
-
+void	*ft_memcpy(void * dest, const void * src, size_t n);
 #endif
