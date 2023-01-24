@@ -17,27 +17,23 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*ps;
-	char	*bs;
-	size_t		a;
-
-	a = ft_strlen(s);
-	ps = ((char *) s) + a;
-	bs = ((char *) s) + a + 1;
-	while (a > n)
+	unsigned char *p = (unsigned char*)s;
+	unsigned char *isCharFind = NULL;
+	if (s == NULL)
+		return (NULL);
+	while((s!= NULL) && (n--))
 	{
-		if (*ps == (unsigned char) c)
+		if( *p != (unsigned char)c )
 		{
-			return (ps);
+			p++;
 		}
-		ps--;
-		a--;
+		else
+		{
+			isCharFind = p;
+			break;
+		}
 	}
-	if (c == '\0')
-	{
-		return (bs);
-	}
-	return (NULL);
+	return isCharFind;
 }
 
 // int main(void)
