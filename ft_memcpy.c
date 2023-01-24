@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:13 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/13 16:33:46 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:43:13 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include <libft.h>
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*pdest;
 	char	*psrc;
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 		*pdest++ = *psrc++;
 		n--;
 	}
-	return (dest);
+	return ((void *) dest);
 }
 
 // int	main(void)

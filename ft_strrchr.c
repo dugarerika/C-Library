@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 05:57:19 by etavera-          #+#    #+#             */
-/*   Updated: 2022/12/15 16:27:44 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:52:36 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ char	*ft_strrchr(const char *s, int c)
 	a = length1(s);
 	ps = ((char *) s) + a;
 	bs = ((char *) s) + a + 1;
+	if (c == '\0')
+		return (bs);
+	if (c == 0)
+		return ((char *)s);
 	while (a >= 0)
 	{
 		if (*ps == (char) c)
@@ -41,10 +45,6 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		ps--;
 		a--;
-	}
-	if (c == '\0')
-	{
-		return (bs);
 	}
 	return (NULL);
 }
