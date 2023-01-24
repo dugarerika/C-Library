@@ -16,13 +16,15 @@
 
 void	*ft_calloc(size_t elemento, size_t bloque)
 {
-   unsigned int *p;
+   char *p;
    unsigned int	i;
    i = 0;
    p = malloc(elemento * bloque);
-   if ( p == 0)
+   if ( elemento == SIZE_MAX || bloque == SIZE_MAX)
+      return (NULL);
+   if ( p == NULL)
       return ((void *) p);
-   while (i < elemento * bloque)
+   while (i <= elemento * bloque)
 	{
 		p[i] = 0;
 		i++;
