@@ -14,12 +14,18 @@
 #include <stdlib.h>
 #include <libft.h>
 
-void	*ft_calloc()
+void	*ft_calloc(size_t elemento, size_t bloque)
 {
-
-}
-
-int	main(void)
-{
-
+   unsigned int *p;
+   unsigned int	i;
+   i = 0;
+   p = malloc(elemento * bloque);
+   if ( p == 0)
+      return ((void *) p);
+   while (i < elemento * bloque)
+	{
+		p[i] = 0;
+		i++;
+	}
+   return ((void *) p);
 }
