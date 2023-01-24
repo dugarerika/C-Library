@@ -14,29 +14,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// unsigned int	length1(const char *s)
-// {
-// 	unsigned int	k;
-
-// 	k = 0 ;
-// 	while (s[k] != '\0')
-// 		k++;
-// 	return (k);
-// }
-
-// unsigned int 	ft_position(const char *s, int c)
-// {
-// 	unsigned int	i;
-// 	unsigned char sc;
-
-// 	sc = (unsigned char) c;
-// 	i = length1(s);
-
-// 	while (s[i] != sc)
-// 		i--;
-// 	return (i);
-// }
-
 char	*ft_strchr(const char *s, int c)
 {
 	char	*ps;
@@ -44,13 +21,13 @@ char	*ft_strchr(const char *s, int c)
 	ps = (char *) s;
 	while (*ps != '\0')
 	{
-		if (*ps == c)
+		if (*ps == (char) c)
 		{
 			return (ps);
 		}
 		ps++;
 	}
-	if (*ps == c)
+	if (*ps == (char) c)
 	{
 		return (ps);
 	}
