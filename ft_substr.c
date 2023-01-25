@@ -6,32 +6,55 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:50:22 by etavera-          #+#    #+#             */
-/*   Updated: 2023/01/23 09:32:10 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:59:17 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
+
+size_t	ft_strlen1(const char *str)
+{
+	size_t	r;
+
+	r = 0;
+	while (str[r] != '\0')
+	{
+		r++;
+	}
+	return (r);
+}
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *ptrstr;
+	char *tr;
 	size_t	i;
 	size_t	j;
-	i = (size_t) start;
-	ptrstr = (char *) malloc(len + 1);
+	size_t	l;
 
-	if (ptrstr == NULL || s == NULL || len == 0)
+	l = ft_strlen1(s);
+	i = (size_t) start;
+	tr = (char *) malloc(len + 1);
+
+	if (tr == NULL || s == NULL || start == len)
 		return (0);
-	while (s[i] != '\0' && i < len)
+	if(l < len)
+		len = l;
+		printf("%zu", l);
+		printf("%zu", len);
+	j = 0;
+	while (j < len)
 	{
-		j = 0;
-		ptrstr[j] = (char) &s[i];
+		// printf("%c", (char) s[i]);
+		tr[j] = s[i];
 		i++;
 		j++;
 	}
-	return (ptrstr);
+	tr[i] = '\0';
+	printf("%zu", j);
+		// printf("%zu", len);
+	return ((char *)tr);
 
 
 
@@ -40,5 +63,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 int	main(void)
 {
-
+	char	*str = "i just want this part #############";
+	size_t	size = 10;
+	char	*ret;
+	ret = ft_substr(str, 10, size);
+	printf("%s", ret);
 }

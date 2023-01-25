@@ -6,7 +6,7 @@
 /*   By: etavera- <etavera-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:30:45 by etavera-          #+#    #+#             */
-/*   Updated: 2022/10/05 08:31:00 by etavera-         ###   ########.fr       */
+/*   Updated: 2023/01/25 09:07:51 by etavera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,9 @@ char	*ft_strdup(char *src)
 {
 	char	*str;
 
-	str = (char *) malloc(sizeof(char *) * ft_strlenth(src) + 1);
+	str = (char *) malloc(ft_strlenth(src) + 1);
 	if (str == NULL)
 		return (0);
 	ft_copy(str, src);
 	return (str);
 }
-
-// int main()
-// {
-// 	char *str = "Hello";
-// 	char *paste = NULL;
-
-// 	paste = ft_strdup(str);
-// 	printf("%s\n", paste);
-// 	return (0);
-// }

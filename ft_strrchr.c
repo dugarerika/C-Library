@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*ps;
 	char	*bs;
-	int	a;
+	int		a;
 
 	a = length1(s);
 	ps = ((char *) s) + a;
