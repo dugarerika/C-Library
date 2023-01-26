@@ -16,34 +16,30 @@
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-   size_t i;
-   size_t j;
    char *ss;
-   char *ps1;
-   char *ps2;
+   char *ts;
+   size_t ls1;
+   size_t ls2;
 
-   ps1 = (char *) s1;
-   ps2 = (char *) s2;
-   ss = (char *) malloc ( ft_strlen(s1) + ft_strlen(s2) - 1);
-   if(s1 == NULL && s2 == NULL)
+   ts = NULL;
+   ls1 = ft_strlen(s1);
+   ls2 = ft_strlen(s2);
+   if (s1 == NULL && s2 == NULL)
       return (0);
+   ss = (char *) malloc (ls1 + ls2 + 1);
    if(ss == NULL)
       return (0);
-   i = 0;
-   while (ps1[i] != '\0')
+   while (*s1 != '\0')
    {
-      ss[i] = ps1[i];
-      i++;
+      *ts++ = *s1++;
    }
-   j = 0;
-   while (ps2[i] != '\0')
+   while (*s2 != '\0')
    {
-      ss[i] = ps2[j];
-      i++;
-      j++;
+      *ts++  = *s2++;
    }
-   ss[i] = '\0';
-   return ((char *)ss);
+   *ts = '\0';
+   ss = ts;
+   return (ss);
 }
 
 // int main(void)
