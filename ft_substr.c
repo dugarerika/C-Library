@@ -28,7 +28,7 @@ size_t	ft_strlen1(const char *str)
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *tr;
+	char		*tr;
 	size_t	i;
 	size_t	j;
 	size_t	l;
@@ -37,12 +37,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	i = (size_t) start;
 	tr = (char *) malloc(len + 1);
 
-	if (tr == NULL || s == NULL || start == len)
+	if (tr == NULL || s == NULL || i == len || i >= l)
 		return (0);
-	if(l < len)
+	if(l < len )
 		len = l;
-		printf("%zu", l);
-		printf("%zu", len);
+	// printf("%zu", l);
+	// printf("%zu", len);
 	j = 0;
 	while (j < len)
 	{
@@ -52,7 +52,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		j++;
 	}
 	tr[i] = '\0';
-	printf("%zu", j);
+	// printf("%zu", j);
 		// printf("%zu", len);
 	return ((char *)tr);
 
@@ -61,11 +61,11 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 }
 
-int	main(void)
-{
-	char	*str = "i just want this part #############";
-	size_t	size = 10;
-	char	*ret;
-	ret = ft_substr(str, 10, size);
-	printf("%s", ret);
-}
+// int	main(void)
+// {
+// 	char	*str = "i just want this part #############";
+// 	size_t	size = 10;
+// 	char	*ret;
+// 	ret = ft_substr(str, 10, size);
+// 	printf("%s", ret);
+// }
