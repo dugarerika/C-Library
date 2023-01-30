@@ -28,13 +28,13 @@ char 	*ft_strtrim(char const *s1, char const *set)
 	ts1= 0;
 	if (s1!= 0 && set != 0)
 	{
-		printf("%zu", i);
-		printf("%zu", j);
+		// printf("%zu", i);
+		// printf("%zu", j);
 		i = 0;
 		j = strlen(s1);
 		while (s1[i] && strchr(set, s1[i]))
 			i++;
-		while (s1[j - 1] && strchr(set, s1[j - 1] && j > i))
+		while (s1[j - 1] && strchr(set, s1[j - 1]) && j > i)	
 			j--;
 		ts1 = (char *)malloc(j - i + 1);
 		if (ts1)
@@ -44,11 +44,11 @@ char 	*ft_strtrim(char const *s1, char const *set)
 return (ts1);
 }
 
-int	main(void)
-{
-	char const	*s1 = "01234";
-	char const	*s2 = "01";
-	char	*ret;
-	ret = ft_strtrim(s1, s2);
-	// printf("%s", ret);
-}
+// int	main(void)
+// {
+// 	char const	*s1 = "01234";
+// 	char const	*s2 = "01";
+// 	char	*ret;
+// 	ret = ft_strtrim(s1, s2);
+// 	// printf("%s", ret);
+// }
