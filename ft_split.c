@@ -14,11 +14,76 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	**ft_split(const char *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	if (s == NULL || c == 0)
-		return ((char **) 0);
-	return ((char **) 0);
+	int i;
+	int word;
+
+	i = 0;
+	word = 0;
+	while (s && s[i])
+	{
+		if (s[i] != c)
+		{
+			word++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+		else
+			i++;
+	}
+	return (word);
+}
+
+static int	ft_size_word(char const *s, char c, int i)
+{
+	int	size;
+
+	size = 0;
+	while (s[i] != c && s[i])
+	{
+		size++;
+		i++;
+	}
+	return (size);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j> 0)
+	{
+		free(strs[j]);
+		j--;
+	}
+	free(strs);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	int		i;
+	char	**str;
+	int		size;
+	int		j;
+
+	i = 0;
+	j = -1;
+	str = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
+	if (str == NULL)
+		return (NULL);
+	while (++j < ft_count_word(s, c))
+	{
+		while (s[i] == c)
+			i++;
+		size = ft_size_word(s, c, i);
+		if (!(str[j] = ft_substr(s, i, size)))
+		{
+			ft_free(str, j);
+			return (NULL);
+		}
+		i += size;
+	}
+	str[j] = 0;
+	return (str);
 }
 
 // int	main(void)
