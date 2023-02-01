@@ -40,25 +40,20 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	negative = 0;
-	lon = ft_len(n);
-	temp = (char *)malloc(sizeof(char) * lon + 1);
-	if (temp == NULL || n == 0)
+	if (n == -2147483648)
 	{
-		if (n == 0)
-			return ("0");
-		else
-			return (NULL);
-	}
-			if (n == -2147483648)
-	{
-		// temp = (char *)malloc(sizeof(char) * 13);
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	}
 		if (n == 2147483647)
 	{
-		// temp = (char *)malloc(sizeof(char) * 12);
-		return ("2147483647");
+		return (ft_strdup("2147483647"));
 	}
+	lon = ft_len(n);
+	temp = (char *)malloc(sizeof(char) * lon + 1);
+	if (temp == NULL)
+		return (NULL);
+	if (n == 0)
+		return ("0");
 	if (n < 0)
 	{
 		negative = 1;
@@ -90,5 +85,5 @@ char	*ft_itoa(int n)
 // 	longitud = strlen(ret);
 // 	// int r = strcmp(ret, "");
 // 	printf("%s", ret);
-// 	// printf("%d", longitud);
+// 	printf("%d", longitud);
 // }
