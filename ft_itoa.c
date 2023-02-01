@@ -15,37 +15,33 @@
 #include <string.h>
 #include "libft.h"
 
-char	*reverse(char *s)
+int	ft_len(int n)
 {
-	int	i;
-	int	j;
-	int	temp;
+	int	lon;
 
-	i = 0;
-	j = ft_strlen(s);
-	while (j > i)
+	if (n <= 0)
+		lon = 1;
+	else
+		lon = 0;
+	while (n != 0)
 	{
-		j--;
-		temp = s[i];
-		s[i] = s[j];
-		s[j] = temp;
-		i++;
+		n = n / 10;
+		lon++;
 	}
-	s[i] = '\0';
-	return (s);
+	return (lon);
 }
 
 char	*ft_itoa(int n)
 {
 	int		i;
-	int		negative;
+	int negative;
 	char	*temp;
-	size_t 	lon;
+	int 	lon;
 
 	i = 0;
 	negative = 0;
-	lon = strlen(x);
-	temp = (char *)malloc(11);
+	lon = ft_len(n);
+	temp = (char *)malloc(sizeof(char) * lon + 1);
 	if (temp == NULL || n == 0)
 	{
 		if (n == 0)
@@ -60,22 +56,32 @@ char	*ft_itoa(int n)
 		negative = 1;
 		n *= -1;
 	}
-	while (n)
+	temp[lon--] = '\0';
+	while (lon >= 0)
 	{
-		temp[i++] = (n % 10) + '0';
+		temp[lon] = (n % 10) + '0';
 		n /= 10;
+		lon--;
 	}
 	if (negative)
-		temp[i] = '-';
-	return (reverse(temp));
+	{
+		temp[0] = '-';
+	}
+	// printf("%lu", strlen(temp));
+	// printf("%s", temp);
+
+	return (temp);
 }
 
 // int	main(void)
 // {
-// 	char const	*s1 = "";
-// 	char const	*s2 = "";
+// 	int longitud;
+// 	int s1 = -20;
 // 	char	*ret;
-// 	ret = ft_strtrim(s1, s2);
-// 	int r = strcmp(ret, "");
-// 	printf("%d", r);
+// 	ret = ft_itoa(s1);
+// 	longitud = strlen(ret);
+// 	// int r = strcmp(ret, "");
+// 	// printf("%s", ret);
+// 	// printf("%d", longitud);
+
 // }
