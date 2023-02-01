@@ -49,8 +49,16 @@ char	*ft_itoa(int n)
 		else
 			return (NULL);
 	}
-	if (n == -2147483648)
+			if (n == -2147483648)
+	{
+		// temp = (char *)malloc(sizeof(char) * 13);
 		return ("-2147483648");
+	}
+		if (n == 2147483647)
+	{
+		// temp = (char *)malloc(sizeof(char) * 12);
+		return ("2147483647");
+	}
 	if (n < 0)
 	{
 		negative = 1;
@@ -76,12 +84,11 @@ char	*ft_itoa(int n)
 // int	main(void)
 // {
 // 	int longitud;
-// 	int s1 = -20;
+// 	int s1 = 2147483647;
 // 	char	*ret;
 // 	ret = ft_itoa(s1);
 // 	longitud = strlen(ret);
 // 	// int r = strcmp(ret, "");
-// 	// printf("%s", ret);
+// 	printf("%s", ret);
 // 	// printf("%d", longitud);
-
 // }
